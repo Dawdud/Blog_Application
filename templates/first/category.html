@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First</title>
+</head>
+<body>
+<div>
+    {% if category %}
+        <h1>{{category.name}}</h1>
+            {%if books %}
+                <ul>
+                    {% for book in books %}
+                    <li><a href="/first/book/{{book.pk}}/{{book.slugbook}}">{{book.Title}}</a> </li>
+                    {% endfor %}
+                </ul>
+        {% else %}
+                <strong>No books in categories</strong>
+        {% endif %}
+    <div>
+        {% if perms.first.add_books %}
+        <a href="/first/category/{{category.slug}}/add_books">Add Book</a>
+        {% endif %}
+    </div>
+    {% else %}
+        The specified category not exist!
+    {% endif %}
+
+</div>
+
+</body>
+</html>

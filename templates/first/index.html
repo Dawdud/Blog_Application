@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>First</title>
+</head>
+<body>
+<h1> My first project...</h1>
+<div>
+     I'm Dawid<br/>
+     <strong>{{boldmessage}}</strong><br/>
+
+</div>
+<div>
+   {% if categories %}
+    <ul>
+        {% for category in categories %}
+            <li>
+                <a href="/first/category/{{category.slug}}">{{category.name}}</a>
+
+            </li>
+        {% endfor %}
+
+    </ul>
+    {% else %}
+    <strong>There are not categories present.</strong>
+    {% endif %}
+</div>
+<div>
+
+        {%  if perms.first.add_category %}
+        <a href="/first/add_category/">Add new Category</a><br/>
+        {% endif %}
+
+
+    <a href="/first/about/">About</a><br/>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{{object.title}}
+{{ object.Title}}
+{{ object.OriginalTitle}}
+{{ object.Author }}
+{{object.Publisher}}
+{{object.slugbook}}
+{{object.id}}

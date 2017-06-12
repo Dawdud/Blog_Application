@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First</title>
+</head>
+<body>
+{% if books %}
+        <ul>
+
+            <li>{{books.Title}}</li>
+            <li>{{books.Author}}</li>
+            <li>{{books.OriginalTitle}}</li>
+            <li>{{books.ISBN}}</li>
+            <li>{{books.Publisher}}</li>
+             <li>{{books.category}}</li>
+             <li>{{books.id}}</li>
+            </ul>
+{% else %}
+            <strong>Error but i am here</strong>
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addbooks</title>
+</head>
+<body>
+<h1>Add books</h1>
+<div>
+    <form id="books_form" method="post" action="/first/category/{{category.slug}}/add_books/">
+     {%csrf_token%}
+        {% for field in form.visible_fields %}
+            {{field.errors}}
+            {{field.help_text}}
+            {{field}}
+        {% endfor %}
+
+    <input type="submit" name="submit" value="Add book"/>
+        </form>
+</div>
+</body>
+</html>
