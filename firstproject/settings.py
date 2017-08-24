@@ -26,7 +26,7 @@ SECRET_KEY = '))7t^i5ak$&)64kv5s_*k@%0jhi3$qwaq(uqutm%hi6uo@v3=w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [u'testserver', u'127.0.0.1']
 EMAIL_BACKEND= 'django.core.mail.backends.console.EmailBackend'
 
 # Application definition
@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media'
             ],
         },
     },
@@ -137,4 +138,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_PATH= os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
+STATICFILES_DIRS= (STATIC_PATH,)
 STATIC_URL = '/static/'
+

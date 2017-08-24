@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>First</title>
-</head>
-<body>
+{% extends 'first/base.html' %}
+{% block content %}
 <div>
     {% if category %}
-        <h1>{{category.name}}</h1>
+        <h3>{{category.name}}</h3>
             {%if books %}
                 <ul>
                     {% for book in books %}
@@ -28,5 +23,4 @@
 
 </div>
 
-</body>
-</html>
+{% endblock %}

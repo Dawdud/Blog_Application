@@ -11,12 +11,16 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model= User
         fields= ('username','first_name','last_name','email')
+
+
 class CategoryForm(forms.ModelForm):
     name= forms.CharField(max_length=128, help_text="please enter the category name.")
     slug= forms.CharField(widget=forms.HiddenInput(), required= False)
     class Meta:
         model= Category
         fields= ('name',)
+
+
 
 class BookForm(forms.ModelForm):
     Title= forms.CharField(max_length=128,required=True, help_text="Please enter the  Book Title")

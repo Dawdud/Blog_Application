@@ -1,32 +1,54 @@
-<!DOCTYPE html>
+{% extends 'first/base.html' %}
 {%load staticfiles%}
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>First</title>
-</head>
-<body>
-<h1> My first project...</h1>
-<div>
-     I'm Dawid<br/>
-     <strong>{{boldmessage}}</strong><br/>
+{% block content %}
 
-</div>
-<div>
+
+    <div class="jumbotron vertical-center">
+
+
+        <form class="form-inline  " method="get" action=".">
+        <div class="form-group has-feedback blue justify-content-center">
+
+
+            <input class="form-control input" name="Szukaj" type="text" placeholder="Wyszukaj autora lub książkę" style='width:500px'>
+            <button type="button" class="btn  btn-round">
+            Szukaj
+            </button>
+        </div>
+
+            </form>
+
+
+
+
+    </div>
+
+    <div class="container">
+    <div class="row row-offcanvas">
+    <div class="col-12 md-9">
    {% if categories %}
-    <ul>
-        {% for category in categories %}
-            <li>
-                <a href="/first/category/{{category.slug}}">{{category.name}}</a>
 
-            </li>
+
+        {% for category in categories %}
+
+
+        <div class="row">
+            <div class="col-6 col-lg-12 ">
+                <a href="/first/category/{{category.slug}}">{{category.name}}</a>
+            </div>
+        </div>
+
+
         {% endfor %}
 
-    </ul>
+
     {% else %}
     <strong>There are not categories present.</strong>
     {% endif %}
-</div>
+    </div>
+    </div>
+    </div>
+
 <div>
 
         {%  if perms.first.add_category %}
@@ -34,8 +56,8 @@
         {% endif %}
 
 
-    <a href="/first/about/">About</a><br/>
+
 
 </div>
-</body>
-</html>
+
+{% endblock %}

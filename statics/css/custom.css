@@ -1,0 +1,44 @@
+/* Navbar */
+.navbar {
+     background-color: #E8E8E8;
+
+}
+.navbar-header
+{
+background-color: #04260D;
+height: 65px;
+}
+.logo
+{
+font-size: 25px;
+font-family: 'Lato', sans-serif;
+}
+.nav-link
+{
+color:#04260D;
+font-family: 'Cairo', sans-serif;
+
+}
+
+/*Banner */
+.Banner
+{
+position: absolute;
+    width: 100%;
+    left: 0;
+
+}
+
+.no-padding
+{
+padding-left:0;
+padding-right:0;
+}
+
+
+.row > div > img { width: 100%; display: block; }
+
+.img-fluid
+{
+height: 55%;
+}

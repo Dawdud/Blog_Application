@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Add Category</h1>
+{% extends 'first/base.html' %}
+{% block content %}
+
+<h3>Add Category</h3>
 <div>
     <form id="category_form" method="post" action="/first/add_category/">
         {%csrf_token%}
@@ -21,5 +17,4 @@
 
     </form>
 </div>
-</body>
-</html>
+{% endblock %}

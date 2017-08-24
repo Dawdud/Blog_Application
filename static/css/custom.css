@@ -1,0 +1,68 @@
+/* Navbar */
+.navbar {
+     background-color: #E8E8E8;
+
+}
+.navbar-header
+{
+background-color: #04260D;
+height: 65px;
+}
+.logo
+{
+font-size: 25px;
+font-family: 'Lato', sans-serif;
+}
+.nav-link
+{
+color:#04260D;
+font-family: 'Cairo', sans-serif;
+
+}
+
+/*Banner */
+.Banner
+{
+position: absolute;
+    width: 100%;
+    left: 0;
+
+}
+.jumbotron
+{
+background:url("/static/images/baner.jpg");
+min-height: 300px;
+}
+.vertical-center
+{
+min-height:25%;
+min-height: 25vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.blue
+{
+background-color:rgba(41,43,43,0.9);;
+min-width: 1200px;
+min-height: 90px;
+
+}
+.no-padding
+{
+padding-left:0;
+padding-right:0;
+}
+
+.input
+{
+ border-radius: 10px;
+
+}
+
+.row > div > img { width: 100%; display: block; }
+
+.img-fluid
+{
+height: 55%;
+}

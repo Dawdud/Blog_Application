@@ -4,17 +4,15 @@ from django.core.validators import MinValueValidator
 from django.db import models
 from django.template.defaultfilters import slugify
 import uuid
-class TypeOfDocument(models.Model):
-     nameofdocument= models.CharField(max_length=128, unique=True)
 
-     class Meta:
-         verbose_name_plural = "TypeOfDocument"
-         def __str__(self):
-            return self.name
-
+def upload_location(instance,filename):
+    return "%s/%s"%(instance.id, filename)
 class Category(models.Model):
         name= models.CharField(max_length=128, unique=True)
         slug= models.SlugField(blank=True, unique=True, default=uuid.uuid1 )
+        image= models.ImageField(upload_to=upload_location)
+        height_field= models.IntegerField()
+        width_field= models.IntegerField()
         def save(self,*args,**kwargs):
             self.slug= slugify(self.name)
             super(Category, self).save(*args,**kwargs)
@@ -25,6 +23,15 @@ class Category(models.Model):
         def __str__(self):
                 return self.name
 
+
+class News(models.Model):
+      Title= models.CharField(max_length=128)
+      image = models.ImageField(upload_to=upload_location)
+      text= models.TextField()
+      DatePublished = models.DateField(auto_now=False, null=True)
+
+      def __str__(self):
+          return self.Title
 
 
 class Books(models.Model):

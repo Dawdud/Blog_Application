@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>First</title>
-</head>
-<body>
+{% extends 'first/base.html' %}
+{% block content %}
+
 {% if books %}
         <ul>
 
@@ -20,5 +16,4 @@
             <strong>Error but i am here</strong>
 {% endif %}
 
-</body>
-</html>
+{% endblock %}

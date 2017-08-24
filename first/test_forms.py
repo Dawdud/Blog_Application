@@ -1,15 +1,16 @@
 from django.test import TestCase
-from first.forms import CategoryForm, BookForm
+from first.forms import CategoryForm, BookForm, SignUpForm
 
-class CategoryTestCase(TestCase):
-    def test_Category(self):
-        form= CategoryForm(data={'name':'Comic','slug':'comic'})
+class CategoryTest(TestCase):
+    def test_Category_valid(self):
+        form= CategoryForm(data={'name':'Comic'})
         self.assertTrue(form.is_valid())
     def test_Category_Invalid(self):
-        form= CategoryForm(data={'name':'', 'slug':''})
+        form= CategoryForm(data={'name':''})
         self.assertFalse(form.is_valid())
 
-class BookTestCase(TestCase):
+
+class BookTest(TestCase):
     def test_books_valid(self):
         form= BookForm(data={'Title': 'Igrzyska smierci','OriginalTitle':'Hunger Games', 'Author': 'Suzanne Collins', 'Publisher':'Rodzina', 'ISBN':'9788372786371', 'DatePublished':'2017-09-05' })
         self.assertTrue(form.is_valid())

@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import permission_required
 from django.http import HttpResponse
 from django.shortcuts import render,get_object_or_404, redirect
 from random import randint
-from  first.models import Books, Category, TypeOfDocument
+from  first.models import Books, Category
 from  first.forms import CategoryForm, BookForm
 from django.contrib.auth import login,logout, authenticate
 from first.forms import SignUpForm
@@ -36,7 +36,7 @@ def add_Books(request, category_name_slug):
     context_dict={'form':form,'category':category}
     return render(request,'first/add_books.html', context_dict)
 
-#@permission_required('first.add_category')
+@permission_required('first.add_category')
 def add_category(request):
     form= CategoryForm()
     if request.method=='POST':
